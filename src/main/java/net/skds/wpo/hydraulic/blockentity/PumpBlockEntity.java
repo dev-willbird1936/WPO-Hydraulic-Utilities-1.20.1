@@ -18,6 +18,7 @@ import net.skds.wpo.hydraulic.HydraulicContent;
 public class PumpBlockEntity extends HydraulicTankBlockEntity {
 
     private static final int MB_PER_LEVEL = 125;
+    private static final boolean TEMPORARILY_DISABLED = true;
 
     public PumpBlockEntity(BlockPos pos, BlockState state) {
         super(HydraulicContent.PUMP_BLOCK_ENTITY.get(), pos, state);
@@ -31,6 +32,10 @@ public class PumpBlockEntity extends HydraulicTankBlockEntity {
     }
 
     private void tickServer(ServerLevel level, BlockPos pos) {
+        // Keep the block registered so existing worlds stay compatible while the pump is paused.
+        if (TEMPORARILY_DISABLED) {
+            return;
+        }
         if (!HydraulicConfig.COMMON.pumps.get() || !isActive()) {
             return;
         }

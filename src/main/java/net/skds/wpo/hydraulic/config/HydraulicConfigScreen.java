@@ -56,49 +56,52 @@ public class HydraulicConfigScreen extends Screen {
             .build());
 
         int row = 0;
-        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Drains", HydraulicConfig.COMMON.drains.get(), HydraulicConfig.COMMON.drains::set);
-        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Pumps", HydraulicConfig.COMMON.pumps.get(), HydraulicConfig.COMMON.pumps::set);
-        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Nozzles", HydraulicConfig.COMMON.nozzles.get(), HydraulicConfig.COMMON.nozzles::set);
-        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Creative Sources", HydraulicConfig.COMMON.creativeSources.get(), HydraulicConfig.COMMON.creativeSources::set);
-        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Valves", HydraulicConfig.COMMON.valves.get(), HydraulicConfig.COMMON.valves::set);
-        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Grates", HydraulicConfig.COMMON.grates.get(), HydraulicConfig.COMMON.grates::set);
-        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Watertight Doors", HydraulicConfig.COMMON.watertightDoors.get(), HydraulicConfig.COMMON.watertightDoors::set);
-        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Watertight Trapdoors", HydraulicConfig.COMMON.watertightTrapdoors.get(), HydraulicConfig.COMMON.watertightTrapdoors::set);
-        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Redstone Control", HydraulicConfig.COMMON.redstoneControl.get(), HydraulicConfig.COMMON.redstoneControl::set);
-        addToggle(top + row * ROW_HEIGHT, Page.SYSTEMS, "Void Excess Water", HydraulicConfig.COMMON.voidExcessWater.get(), HydraulicConfig.COMMON.voidExcessWater::set);
+        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Drains", HydraulicConfig.COMMON.drains.get(), HydraulicConfig.COMMON.drains.getDefault(), HydraulicConfig.COMMON.drains::set);
+        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Pumps", HydraulicConfig.COMMON.pumps.get(), HydraulicConfig.COMMON.pumps.getDefault(), HydraulicConfig.COMMON.pumps::set);
+        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Nozzles", HydraulicConfig.COMMON.nozzles.get(), HydraulicConfig.COMMON.nozzles.getDefault(), HydraulicConfig.COMMON.nozzles::set);
+        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Creative Sources", HydraulicConfig.COMMON.creativeSources.get(), HydraulicConfig.COMMON.creativeSources.getDefault(), HydraulicConfig.COMMON.creativeSources::set);
+        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Valves", HydraulicConfig.COMMON.valves.get(), HydraulicConfig.COMMON.valves.getDefault(), HydraulicConfig.COMMON.valves::set);
+        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Grates", HydraulicConfig.COMMON.grates.get(), HydraulicConfig.COMMON.grates.getDefault(), HydraulicConfig.COMMON.grates::set);
+        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Watertight Doors", HydraulicConfig.COMMON.watertightDoors.get(), HydraulicConfig.COMMON.watertightDoors.getDefault(), HydraulicConfig.COMMON.watertightDoors::set);
+        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Watertight Trapdoors", HydraulicConfig.COMMON.watertightTrapdoors.get(), HydraulicConfig.COMMON.watertightTrapdoors.getDefault(), HydraulicConfig.COMMON.watertightTrapdoors::set);
+        addToggle(top + row++ * ROW_HEIGHT, Page.SYSTEMS, "Redstone Control", HydraulicConfig.COMMON.redstoneControl.get(), HydraulicConfig.COMMON.redstoneControl.getDefault(), HydraulicConfig.COMMON.redstoneControl::set);
+        addToggle(top + row * ROW_HEIGHT, Page.SYSTEMS, "Void Excess Water", HydraulicConfig.COMMON.voidExcessWater.get(), HydraulicConfig.COMMON.voidExcessWater.getDefault(), HydraulicConfig.COMMON.voidExcessWater::set);
 
         row = 0;
-        addIntField(top + row++ * ROW_HEIGHT, Page.TUNING, "Machine Tank Buckets", HydraulicConfig.COMMON.machineTankBuckets.get(), 1, 256, HydraulicConfig.COMMON.machineTankBuckets::set);
-        addIntField(top + row++ * ROW_HEIGHT, Page.TUNING, "Drain Throughput", HydraulicConfig.COMMON.drainThroughputLevels.get(), 1, 8, HydraulicConfig.COMMON.drainThroughputLevels::set);
-        addIntField(top + row++ * ROW_HEIGHT, Page.TUNING, "Pump Throughput", HydraulicConfig.COMMON.pumpThroughputLevels.get(), 1, 8, HydraulicConfig.COMMON.pumpThroughputLevels::set);
-        addIntField(top + row++ * ROW_HEIGHT, Page.TUNING, "Nozzle Throughput", HydraulicConfig.COMMON.nozzleThroughputLevels.get(), 1, 8, HydraulicConfig.COMMON.nozzleThroughputLevels::set);
-        addIntField(top + row * ROW_HEIGHT, Page.TUNING, "Creative Source Output", HydraulicConfig.COMMON.creativeSourceThroughputLevels.get(), 1, 8, HydraulicConfig.COMMON.creativeSourceThroughputLevels::set);
+        addIntField(top + row++ * ROW_HEIGHT, Page.TUNING, "Machine Tank Buckets", HydraulicConfig.COMMON.machineTankBuckets.get(), HydraulicConfig.COMMON.machineTankBuckets.getDefault(), 1, 256, HydraulicConfig.COMMON.machineTankBuckets::set);
+        addIntField(top + row++ * ROW_HEIGHT, Page.TUNING, "Drain Throughput", HydraulicConfig.COMMON.drainThroughputLevels.get(), HydraulicConfig.COMMON.drainThroughputLevels.getDefault(), 1, 8, HydraulicConfig.COMMON.drainThroughputLevels::set);
+        addIntField(top + row++ * ROW_HEIGHT, Page.TUNING, "Pump Throughput", HydraulicConfig.COMMON.pumpThroughputLevels.get(), HydraulicConfig.COMMON.pumpThroughputLevels.getDefault(), 1, 8, HydraulicConfig.COMMON.pumpThroughputLevels::set);
+        addIntField(top + row++ * ROW_HEIGHT, Page.TUNING, "Nozzle Throughput", HydraulicConfig.COMMON.nozzleThroughputLevels.get(), HydraulicConfig.COMMON.nozzleThroughputLevels.getDefault(), 1, 8, HydraulicConfig.COMMON.nozzleThroughputLevels::set);
+        addIntField(top + row * ROW_HEIGHT, Page.TUNING, "Creative Source Output", HydraulicConfig.COMMON.creativeSourceThroughputLevels.get(), HydraulicConfig.COMMON.creativeSourceThroughputLevels.getDefault(), 1, 8, HydraulicConfig.COMMON.creativeSourceThroughputLevels::set);
 
+        this.addRenderableWidget(Button.builder(Component.literal("Defaults"), button -> loadDefaults())
+            .bounds(centerX - 154, this.height - 28, 100, 20)
+            .build());
         this.addRenderableWidget(Button.builder(Component.literal("Save"), button -> saveAndClose())
-            .bounds(centerX - 154, this.height - 28, 150, 20)
+            .bounds(centerX - 50, this.height - 28, 100, 20)
             .build());
         this.addRenderableWidget(Button.builder(CommonComponents.GUI_CANCEL, button -> onClose())
-            .bounds(centerX + 4, this.height - 28, 150, 20)
+            .bounds(centerX + 54, this.height - 28, 100, 20)
             .build());
 
         updatePageState();
     }
 
-    private void addToggle(int y, Page page, String label, boolean initialValue, Consumer<Boolean> setter) {
+    private void addToggle(int y, Page page, String label, boolean initialValue, boolean defaultValue, Consumer<Boolean> setter) {
         int centerX = this.width / 2;
         CycleButton<Boolean> button = this.addRenderableWidget(CycleButton.booleanBuilder(CommonComponents.OPTION_ON, CommonComponents.OPTION_OFF)
             .withInitialValue(initialValue)
             .displayOnlyValue()
             .create(centerX + CONTROL_X_OFFSET, y, CONTROL_WIDTH, 20, CommonComponents.EMPTY));
-        toggleOptions.add(new ToggleOption(Component.literal(label), button, setter, y, page));
+        toggleOptions.add(new ToggleOption(Component.literal(label), button, setter, defaultValue, y, page));
     }
 
-    private void addIntField(int y, Page page, String label, int initialValue, int min, int max, IntConsumer setter) {
+    private void addIntField(int y, Page page, String label, int initialValue, int defaultValue, int min, int max, IntConsumer setter) {
         int centerX = this.width / 2;
         EditBox box = new EditBox(this.font, centerX + CONTROL_X_OFFSET, y, CONTROL_WIDTH, 20, Component.literal(label));
         box.setValue(String.valueOf(initialValue));
         this.addRenderableWidget(box);
-        intOptions.add(new IntOption(Component.literal(label), box, setter, min, max, y, page));
+        intOptions.add(new IntOption(Component.literal(label), box, setter, min, max, defaultValue, y, page));
     }
 
     private void switchPage(Page page) {
@@ -115,6 +118,12 @@ public class HydraulicConfigScreen extends Screen {
         int viewportBottom = this.height - LIST_BOTTOM_PADDING;
         toggleOptions.forEach(option -> option.updateLayout(page, scroll, viewportTop, viewportBottom));
         intOptions.forEach(option -> option.updateLayout(page, scroll, viewportTop, viewportBottom));
+    }
+
+    private void loadDefaults() {
+        toggleOptions.forEach(option -> option.button().setValue(option.defaultValue()));
+        intOptions.forEach(option -> option.box().setValue(String.valueOf(option.defaultValue())));
+        statusMessage = Component.literal("Defaults loaded. Press Save to apply.");
     }
 
     private void clampScroll() {
@@ -245,7 +254,7 @@ public class HydraulicConfigScreen extends Screen {
         void updateLayout(Page page, int scroll, int viewportTop, int viewportBottom);
     }
 
-    private record ToggleOption(Component label, CycleButton<Boolean> button, Consumer<Boolean> setter, int baseY, Page page) implements PagedOption {
+    private record ToggleOption(Component label, CycleButton<Boolean> button, Consumer<Boolean> setter, boolean defaultValue, int baseY, Page page) implements PagedOption {
         @Override
         public void updateLayout(Page currentPage, int scroll, int viewportTop, int viewportBottom) {
             int y = baseY - scroll;
@@ -260,7 +269,7 @@ public class HydraulicConfigScreen extends Screen {
         }
     }
 
-    private record IntOption(Component label, EditBox box, IntConsumer setter, int min, int max, int baseY, Page page) implements PagedOption {
+    private record IntOption(Component label, EditBox box, IntConsumer setter, int min, int max, int defaultValue, int baseY, Page page) implements PagedOption {
         @Override
         public void updateLayout(Page currentPage, int scroll, int viewportTop, int viewportBottom) {
             int y = baseY - scroll;
