@@ -1,6 +1,6 @@
-# WPO Hydraulic Utilities 1.20.1
+# WPO Hydraulic Utilities
 
-Original add-on mod for Water Physics Overhaul, maintained for Forge 1.20.1.
+This repository currently targets Forge 1.20.1 on the active branch.
 
 ## What It Adds
 
@@ -87,18 +87,18 @@ For external fluid transport between machines, Pipez is the recommended companio
 
 ## Related Repositories
 
-- [`SKDS-Core-1.20.1`](https://github.com/dev-willbird1936/SKDS-Core-1.20.1)
-- [`Water-Physics-Overhaul-1.20.1`](https://github.com/dev-willbird1936/Water-Physics-Overhaul-1.20.1)
-- [`WPO-Environmental-Expansion-1.20.1`](https://github.com/dev-willbird1936/WPO-Environmental-Expansion-1.20.1)
+- [`SKDS-Core`](https://github.com/dev-willbird1936/SKDS-Core)
+- [`Water-Physics-Overhaul`](https://github.com/dev-willbird1936/Water-Physics-Overhaul)
+- [`WPO-Environmental-Expansion`](https://github.com/dev-willbird1936/WPO-Environmental-Expansion)
 
 ## Build
 
 For local source builds, clone these repositories next to this one so the folder layout is:
 
 ```text
-../SKDS-Core-1.20.1
-../Water-Physics-Overhaul-1.20.1
-../WPO-Hydraulic-Utilities-1.20.1
+../SKDS-Core
+../Water-Physics-Overhaul
+../WPO-Hydraulic-Utilities
 ```
 
 Typical local build:
@@ -106,3 +106,24 @@ Typical local build:
 ```powershell
 .\gradlew.bat build
 ```
+
+Explicit version build:
+
+```powershell
+.\gradlew.bat build -PmcVersion=1.20.1
+```
+
+Stage the release jar into the workspace release folder:
+
+```powershell
+.\gradlew.bat stageRelease -PmcVersion=1.20.1
+```
+
+Version-specific Minecraft and release values now live in `versions/<mcVersion>.properties`. Keep release tags in the form `v1.20.1-<mod-version>`, and branch by Minecraft version when later ports stop being source-compatible.
+
+## Version Strategy
+
+- Stable repository name, without the Minecraft version in the repo title
+- `main` for the current maintained line
+- `mc/<minecraft-version>` branches when code starts to diverge between game versions
+- release tags in the form `v<minecraft-version>-<mod-version>`
